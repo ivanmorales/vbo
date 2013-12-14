@@ -1,0 +1,591 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<meta name="author" content="Kien trong" />
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/960.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/prettyPhoto.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="js/jquery.localscroll-min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // $("ul.tabs").tabs(".content_element",{
+            //     effect: 'default',
+            //     history: true
+            // });
+            $("a[rel^='prettyPhoto']").prettyPhoto({
+                theme: 'light_rounded',
+                slideshow : true
+			});
+            $('a[href=#main]').click(function(){
+                $('html, body').animate({scrollTop:0},500);
+                return false;
+            });
+
+
+            $('#sidebar').localScroll();
+            selected_child = false;
+            h5 = false
+
+            $("#sidebar ul li h5").click(function(){
+                if (h5) h5.removeClass("selected");
+                $(this).addClass("selected");
+                h5 = $(this);
+                $(".active").slideUp().removeClass("active");
+                $(this).next().slideDown().addClass("active");
+                activeli = $(this).parent();
+                return false;
+            });
+
+            $("#sidebar ul li ul li").click(function(){
+                if (selected_child) selected_child.removeClass("selected");
+                $(this).addClass("selected");
+                selected_child = $(this);
+                return false;
+            });
+
+
+            var topHeight = $('#sidebar').offset().top;
+            $(window).scroll( function() {
+            if($(document).scrollTop() > topHeight){
+                $('#sidebar').css({position: 'fixed', marginTop: -topHeight});
+            }else{
+                $('#sidebar').css({position: 'absolute', marginTop: 0});
+            }
+            });
+        });
+    </script>
+	<title>Hotec Documentation</title>
+</head>
+
+<body>
+
+<div id="header" class="container_12">
+    <h2>Hotec Wordpress Theme Documentation v1.0 by SmoothThemes</h2>
+    <div id="header_left" class="grid_4">
+        <div class="inner">
+            <p>Created: September 6, 2012<br />
+            By: SmoothThemes<br />
+            <a href="http://themeforest.net/user/SmoothThemes">http://themeforest.net/user/SmoothThemes</a></p>
+        </div>
+    </div>
+    <div id="header_right" class="grid_8">
+        <div class="inner">
+            <p>Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://themeforest.net/user/SmoothThemes">here</a>. Thanks so much!</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+<div id="main" class="grid_12">
+    <div id="sidebar" class="grid_3 alpha" data-spy="affix" data-offset-top="200">
+        <ul class="nav tabs">
+            <li><h5 class=""><a href="#overview">Overview and Features</a></h5></li>
+
+            <li><h5><a href="#installation">Installation</a></h5></li>
+            <li><h5><a href="#import-layerSlider">Import LayerSlider data</a></h5></li>
+
+            <li><h5><a href="#videos">Video Tutorials</a></h5></li>
+
+            <li><h5><a href="#">Header Setting</a></h5>
+                <ul>
+                    <li><a href="#logo">Logo</a></li>
+                    <li><a href="#navigation">Navigation</a></li>
+                    <li><a href="#top_bar_right_text">Top bar right text</a></li>
+                    <li><a href="#header_button">Cuttom button</a></li>
+                    <li><a href="#header_post">Element postions</a></li>
+                </ul>
+            </li>
+
+            <li><h5><a href="#">Page Builder Setting</a></h5>
+                <ul>
+                    <li><a href="#page_builder_overview">Page Builder Overview</a></li>
+                    <li><a href="#page_home">Creating Homepage</a></li>
+                    <li><a href="#page_slider">Page Slider</a></li>
+                    <li><a href="#page_titlebar">Titlebar</a></li>
+                    <li><a href="#page_custom_html_code">HTML code</a></li>
+                </ul>
+            </li>
+
+            <li><h5><a href="#">Sidebar</a></h5>
+                <ul>
+                    <li><a href="#sidebar_create">Create Sidebar</a></li>
+                    <li><a href="#sidebar_forpage">Sidebar For Page</a></li>
+                    <li><a href="#sidebar_widget">Sidebar Widgets</a></li>
+                </ul>
+            </li>
+
+           
+            <li><h5><a href="#">Post Thumbnail Type</a></h5>
+                <ul>
+                    <li><a href="#thumbnail_img">Features Thumbnail</a></li>
+                    <li><a href="#thumbnail_slider">Thumbnail Slider</a></li>
+                    <li><a href="#thumbnail_video">Thumbnail Video</a></li>
+                </ul>
+            </li>
+
+            <li><h5><a href="#">Skin and Background</a></h5>
+                <ul>
+                    <li><a href="#global_skin">Global Skin</a></li>
+                    <li><a href="#site_background">Body Background</a></li>
+                    <li><a href="#header_background">Header</a></li>
+                </ul>
+            </li>
+            
+            <li><h5><a href="#">Font Style</a></h5>
+                <ul>
+                    <li><a href="#body_font">Body font</a></li>
+                    <li><a href="#heading_font">Heading font</a></li>
+                </ul>
+            </li>
+
+
+            <li><h5><a href="#shortcodes">Shortcodes</a></h5> </li>
+
+            <li><h5><a href="#javascripts">Javascripts</a></h5></li>
+
+            <li><h5><a href="#psd">PSD files</a></h5></li>
+
+            <li><h5><a href="#r_plugins">Recommend Plugins</a></h5></li>
+
+            <li><h5><a href="#credits">Sources and Credits</a></h5></li>
+        </ul>
+    </div>
+    <div id="content" class="grid_9 omega">
+
+        <div id="overview" class="content_element">
+            <h3>Hotec - Responsive Hotel, Spa & Resort WP Theme</h3>
+            <p><strong>Hotec</strong> is a sleek and clean responsive WordPress theme for your <strong>spa, resort and hotel business.</strong> However it’s so versatile that you can use it for everything you want (corporate website, portfolio…) The layout looks beautiful at any size, be it a laptop screen, iPad, iPhone, Android Mobile or tablets.</p>
+            <h4 class="option_title">01. Theme Features</h4>
+			
+                    <ul>
+                        <li>Fully Responsive (Tested on Multiple Devices)</li>
+                        <li>Full Width Layout or Boxed Layout</li>
+                        <li>HTML5 and CSS3 Tableless Design</li>
+                        <li><strong>Working Contact Form (Ajax)</strong></li>
+                        <li><strong>Working Resservation Form (Ajax)</strong></li>
+                        <li>jQuery Enhanced: Portfolio, Rooms, Gallery Filtering</li>
+                        <li><strong>Built on SmoothThemes Framework</strong>
+                            <ul>
+                                <li>Smart Drag &amp; Drop Page Builder</li>
+                                <li>Advanced Theme Options</li>
+                                <li>Background Uploader</li>
+                                <li>Favicon Uploader</li>
+                                <li>Logo Uploader</li>
+                                <li>500+ Google Fonts with Preview Capability </li>
+                                <li>Unlimited Colors </li>
+                            </ul>
+                        </li>
+                        <li><strong>Multimedia Post</strong>
+                            <ul>
+                                <li>Post With Slideshow </li>
+                                <li>Post with Embedded Video (YouTube and Vimeo)</li>
+                                <li>Post with Feature Image</li>
+                            </ul>
+                        </li>
+                        <li><strong>Premium Resources</strong>
+                            <ul>
+                                <li><a href="http://codecanyon.net/item/layerslider-the-parallax-effect-slider/922100">LayerSlider</a> (15$ Value)</li>
+                                <li><a href="http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380">Revolution Slider</a> (15$ Value)</li>
+                            </ul>
+                        </li>
+                        <li>Flexslider included</li>
+                        <li>10 Predifined Colour Schemes</li>
+                        <li>Event List and Event Calendar</li>
+                        <li>Compatible Browsers: IE8+, Firefox, Safari, Opera, Chrome</li>
+                        <li>Included documentation.</li>
+                    </ul>
+                <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+            
+
+
+
+
+            
+        <div id="installation" class="content_element">
+            <h4 class="option_title">Installation </h4>
+            <p>Unzip the file you download after purchase . The following files and folders will be in the unzipped file:</p>
+            <ul>
+                <li>Hotec.zip</li>
+                <li>Licensing</li>
+                <li>PSDs</li>
+                <li>Documentation</li>
+            </ul>
+            <p>The theme can be uploaded in two ways:</p>
+            <ul>
+                <li>FTP upload: Using your FTP program, upload the non-zipped Hotec folder into the <b>/wp-content/themes/</b> folder on your server.</li>
+                <li>WordPress upload: Navigate to <b>Appearance > Add New Themes > Upload</b>. Go to browse, and select the zipped <b>Hotec</b> folder. Hit Install Now and the theme will be uploaded and installed.</li>
+            </ul>
+            <p>Once the theme is uploaded, you need to activate it. Go to <b>Appearance > Themes</b> and activate <b>Hotec</b> theme.</p>
+            <p>If you need help installing Wordpress see the link here : <a href="http://codex.wordpress.org/Installing_WordPress">http://codex.wordpress.org/Installing_WordPress</a></p>
+            <p class="note"> After the install finish, go to Hotec theme setting page, then cick Save All Change to import default value to database.</p>
+            <h5>Install Sample Data: </h5>
+            <p>Hotec has included wordpress XML demo file, you can see at /assets/sample-data/ . Following this step to import demo data to your site: </p>
+            <p>
+                <a href="images/st_import1.png" rel="prettyPhoto"><img src="images/st_import1.png" alt="" /></a>
+            </p>
+            <p>
+                <a href="images/st_import2.png" rel="prettyPhoto"><img src="images/st_import2.png" alt="" /></a>
+            </p>
+            <ol>
+                <li>Go to <strong>Tools > Import</strong></li>
+                <li>Select XML demo file from /assets/sample-data/</li>
+                <li>Submit Upload file and import.</li>
+                <li>Assign posts to an exitsting account.</li>
+                <li>Check to Download and import file attachments</li>
+                <li>Submit and wait when WP tools download attachments to your wordpress site</li>
+            </ol>
+
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+        
+        <div id="import-layerSlider" class="content_element">
+            <h4 class="option_title">Import layerSlider dummy data </h4>
+             <p>
+                <a href="images/layerslider.png" rel="prettyPhoto"><img src="images/layerslider.png" alt="" /></a>
+            </p>
+            <p>
+             You can find layerSlider import code in file: <strong>HOTEC_THEME_FOLDER/assets/dummy-data/layerslider-dummy.txt</strong> 
+            </p>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+
+
+        <div id="videos" class="content_element">
+            <h4 class="option_title">Video Tutorials</h4>
+            
+            <h5 class="">Setting Up Homepage as Demo Site</h5>
+            <p>
+                <iframe width="640" height="480" src="http://www.youtube.com/embed/HG_9j3z7o9I" frameborder="0" allowfullscreen></iframe>
+            </p>
+
+            
+        </div>
+        
+        
+
+         <div id="logo" class="content_element">
+            <h4 class="option_title">Logo Setting</h4>
+            <p><a href="images/logo.png" rel="prettyPhoto"><img src="images/logo.png" alt="" /></a></p>
+            <ol>
+                <li>Go to Hotec Theme Setting page.</li>
+                <li>Click to Logo setting under General setting tab.</li>
+                <li>Select logo from your computer then click Save All Change button.</li>
+            </ol>
+        </div>
+        
+        <div id="navigation" class="content_element">
+            <h4 class="option_title">Site Navigation</h4>
+            <p><a href="images/navigation.jpg" rel="prettyPhoto"><img src="images/navigation.jpg" alt="" /></a></p>
+            <ol>
+                <li>Go to Menu setting page under Appearance tab.</li>
+                <li>Click to the plus icon to create new Menu item</li>
+                <li>Select Page/Category,.. to add to menu</li>
+                
+                <li>Click Save</li>
+                <li>Select localtion for menus</li>
+                <li>Click Save Menu butto on the right then you are done.</li>
+            </ol>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div>
+        
+        
+         <div id="top_bar_right_text" class="content_element">
+            <h4 class="option_title">Top bar right text</h4>
+            <p><a href="images/header_right_text.png" rel="prettyPhoto"><img src="images/header_right_text.png" alt="" /></a></p>
+            <ol>
+                <li>Go to Widgtets setting page under Appearance tab.</li>
+                <li>Drag widget "Text" to sidebar "Top bar right widget" and paste your custom code to textarea.</li>
+                <li>Click Save Button.</li>
+            </ol>
+            
+            Here is same code: <br />
+             <pre>
+&lt;ul class=&quot;top-bar-contact&quot;&gt;
+&lt;li class=&quot;top-bar-address&quot;&gt;36 Wall Street, USA, &lt;a href=&quot;page-contact.php&quot;&gt;View on Map&lt;/a&gt;&lt;/li&gt;
+&lt;li class=&quot;top-bar-phone&quot;&gt;Call Us: &lt;span&gt;1-500-456-9875&lt;/span&gt;&lt;/li&gt;
+&lt;li class=&quot;top-bar-mail&quot;&gt;&lt;a href=&quot;#&quot;&gt;Reservation@hotec.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+             </pre>
+            
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div>
+        
+        
+        <div id="header_button" class="content_element">
+             <h4 class="option_title">Header Button</h4>
+            <p><a href="images/header_button.png" rel="prettyPhoto"><img src="images/header_button.png" alt="" /></a></p>
+            <ol>
+                <li>To to Theme Option</li>
+                <li>Click to  Reservation Button</li>
+            </ol>
+            <p>If you want to show this button please make sure option  "Show reservation button in header" is Yes. You can see button postion <a href="#header_post">Here</a> (Postion 5)</p>
+            
+            <p>In this page, You can select custom  label, link, color for this button.</p>
+            
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div>
+        
+        
+        <div id="header_post" class="content_element">
+             <h4 class="option_title">Header Element Positions</h4>
+            <p><a href="images/header_positon.png" rel="prettyPhoto"><img src="images/header_positon.png" alt="" /></a></p>
+            <ol>
+                <li>Top bar menu.</li>
+                <li>Top bar right text.</li>
+                <li>Logo.</li>
+                <li>Main Navigation.</li>
+                <li>Custom button.</li>
+            </ol>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div>
+
+
+        <div id="page_builder_overview" class="content_element">
+            <h4 class="option_title">Page Builder and Options Overview</h4>
+            <p><a href="images/page_builder_overview.jpg" rel="prettyPhoto"><img src="images/page_builder_overview.jpg" alt="" /></a></p>
+            <ol>
+                <li>List of page builder items.</li>
+                <li>Page builder items is actived in canvas. Click to pencil icon to edit builder item.</li>
+                <li>Select Layout for this page</li>
+                <li>Select Sidebar for this page, then go to <strong>Appearance -> Widget</strong> to manager widget.</li>
+                <li>Option to disable page title</li>
+                <li>Option to enable top page element (Slider, titlebar, custom HTMl code)</li>
+                <li>Top element options</li>
+            </ol>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div>
+
+
+        <div id="page_home" class="content_element">
+            <h4 class="option_title">Create and Set Homepage</h4>
+            <p>First, Create a new page, using page builder to built homepage content, then go to <strong>Settings > Reading </strong>and choose that page as Front page.</p>
+            <p><a href="images/homepage.jpg" rel="prettyPhoto"><img src="images/homepage.jpg" alt="" /></a></p>
+        </div>
+        
+        
+         <div id="page_slider" class="content_element">
+            <h4 class="option_title">Page Slider</h4>
+           
+            <p><a href="images/page_slider.png" rel="prettyPhoto"><img src="images/page_slider.png" alt="" /></a></p>
+            <ol>
+                 <li>Enable Show top element</li>
+                 <li>Select top element type (Layer Slider, Revolution Slider)</li>
+                 <li>Select Slider to display</li>
+            </ol>
+            <p class="note">You must add Layer Slider or Revolution Slider befor use this options </p>
+        </div>
+        
+         <div id="page_titlebar" class="content_element">
+            <h4 class="option_title">Page Tilebar</h4>
+           
+            <p><a href="images/titlebar.jpg" rel="prettyPhoto"><img src="images/titlebar.jpg" alt="" /></a></p>
+            <ol>
+                 <li>Enable Show top element</li>
+                 <li>Select top element type  as titlebar</li>
+                 <li>Fill titlebar title, descriptions, background image.</li>
+            </ol>
+            <p class="not">You can leave empty titlebar title, descriptions, background image.</p>
+            The result will look like example below:<br />
+            <p><a href="images/titlebar_example.png" rel="prettyPhoto"><img src="images/titlebar_example.png" alt="" /></a></p>
+            
+        </div>
+        
+        <div id="page_custom_html_code" class="content_element">
+            <h4 class="option_title">Page Tilebar</h4>
+           
+            <p><a href="images/html_code.png" rel="prettyPhoto"><img src="images/html_code.png" alt="" /></a></p>
+            <ol>
+                 <li>Enable Show top element</li>
+                 <li>Select top element type  as HTML code</li>
+                 <li>Enter you custom code</li>
+            </ol>
+            Example google map code:
+            <pre style="width: 100%; overflow: auto;">
+                  &lt;iframe width=&quot;100%&quot; scrolling=&quot;no&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; marginheight=&quot;0&quot;
+                   marginwidth=&quot;0&quot; src=&quot;http://maps.google.ca/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=New+York&amp;sll=49.891235,-97.15369&amp;sspn=47.259509,86.923828&amp;ie=UTF8&amp;hq=&amp;hnear=New+York,+United+States&amp;ll=40.714867,-74.005537&amp;spn=0.019517,0.018797&amp;z=14&amp;iwloc=near&amp;output=embed&quot;&gt;&lt;/iframe&gt;
+            </pre>
+            <br />
+            
+            The result will look like example below:
+            <br />
+            <p><a href="images/html_code_results.png" rel="prettyPhoto"><img src="images/html_code_results.png" alt="" /></a></p>
+            
+        </div>
+        
+
+        <div id="sidebar_create" class="content_element">
+            <h4 class="option_title">Create Sidebar</h4>
+            <p>By default Hotec come with 7 sidebar for sidebar-left, sidebar-right. header-right and footer. To create another sidebar please follow the picture below : </p>
+            <p><a href="images/create_sidebar.jpg" rel="prettyPhoto"><img src="images/create_sidebar.jpg" alt="" /></a></p>
+            <ol>
+                <li>Go to Hotec theme setting page</li>
+                <li>Click to Custom Sidebars tab and click add more</li>
+                <li>Edit the sidebar title</li>
+                <li>Click Save All Change</li>
+            </ol>
+            <p class="note">Then new sidebar widget area will display on Widget Page.</p>
+        </div>
+
+
+       
+
+        <div id="sidebar_forpage" class="content_element">
+            <h4 class="option_title">Select Sidebar For Page</h4>
+            <p>Go to Page edit page and you will see the section for select sidebar for page.</p>
+            <p><a href="images/sidebar_for_page.jpg" rel="prettyPhoto"><img src="images/sidebar_for_page.jpg" alt="" /></a></p>
+        </div>
+
+
+        <div id="sidebar_widget" class="content_element">
+            <h4 class="option_title">Select Sidebar For Category</h4>
+            <p>The sidebar you create in above section will appear at right side of this page. Try dragging the widget in side the sidebar box.</p>
+            <p><a href="images/sidebar_widget.jpg" rel="prettyPhoto"><img src="images/sidebar_widget.jpg" alt="" /></a></p>
+        </div>
+
+        
+        <div id="thumbnail_img" class="content_element">
+             <h4 class="option_title">Use Features Thumbnail</h4>
+            <p><a href="images/features_img.jpg" rel="prettyPhoto"><img src="images/features_img.jpg" alt="" /></a></p>
+        </div>
+
+        <div id="thumbnail_slider" class="content_element">
+             <h4 class="option_title">Thumbnail as slider</h4>
+             <p>To create post with thumbnail slider, follow step in the picture bellow:</p>
+            <p><a href="images/thumbnail_slider.jpg" rel="prettyPhoto"><img src="images/thumbnail_slider.jpg" alt="" /></a></p>
+        </div>
+
+        <div id="thumbnail_video" class="content_element">
+             <h4 class="option_title">Thumbnail as Video</h4>
+             <p>Current Hotec support video from youtube and vimeo. Just put the video URL to input box.</p>
+            <p><a href="images/thumbnail_video.jpg" rel="prettyPhoto"><img src="images/thumbnail_video.jpg" alt="" /></a></p>
+        </div>
+
+    
+    
+      <div id="global_skin" class="content_element">
+            <h4 class="option_title">Global Skin</h4>
+              <p><a href="images/global_skin.png" rel="prettyPhoto"><img src="images/global_skin.png" alt="" /></a></p>
+              <p>You can use defined skins or use your custom skin color here.</p>
+        </div>
+
+        <div id="site_background" class="content_element">
+             <h4 class="option_title">Body Background</h4>
+              <p><a href="images/body_bg.jpg" rel="prettyPhoto"><img src="images/body_bg.jpg" alt="" /></a></p>
+        </div>
+        
+        <div id="header_background" class="content_element">
+             <h4 class="option_title">Header Background</h4>
+              <p><a href="images/header_bg.png" rel="prettyPhoto"><img src="images/header_bg.png" alt="" /></a></p>
+              <p class="note">The result will look like image below:</p>
+              <p><a href="images/header_bg_e.png" rel="prettyPhoto"><img src="images/header_bg_e.png" alt="" /></a></p>
+        </div>
+
+        <div id="body_font" class="content_element">
+            <h4 class="option_title">Body font</h4>
+             <p>Hotec come with 500+ Google fonts and about 20 normal fonts (with live preview) for your choice. Go to Font Style tab and select which section will apply new font for.</p>
+       
+            <p><a href="images/body_font.png" rel="prettyPhoto"><img src="images/body_font.png" alt="" /></a></p>
+        </div>
+        
+         <div id="heading_font" class="content_element">
+            <h4 class="option_title">Heading font</h4>
+            
+            <p><a href="images/heading_font.png" rel="prettyPhoto"><img src="images/heading_font.png" alt="" /></a></p>
+        </div>
+        
+        
+       
+
+
+
+        <div id="shortcodes" class="content_element">
+            <h4 class="option_title">Shortcodes</h4>
+            <p><a href="images/shortcodes.jpg" rel="prettyPhoto"><img src="images/shortcodes.jpg" alt="" /></a></p>
+            <p class="note">See full list of shortcodes here: <a href="http://demo.smooththemes.com/magazon/shortcodes/">http://demo.smooththemes.com/magazon/shortcodes/</a></p>
+        </div>
+
+
+        <div id="javascripts" class="content_element">
+            <h4 class="option_title">Javascripts</h4>
+            <p>This theme contains many advanced jQuery functions and libraties.</p>
+            <p>All javascript files (at assets/js/ folder) :</p>
+            <ul>
+                <li><b>jquery-1.4.4.min.js</b></li>
+                <li><b>jquery.prettyPhoto.js</b></li>
+                <li><b>jquery.fitvids.js?ver=1.0</b></li>
+                <li><b>jquery.flexslider.js?ver=1.0</b></li>
+                <li><b>jquery.carouFredSel-6.2.0-packed.js</b></li>
+                <li><b>custom.js</b></li>
+            </ul>
+            <p>If you feel the need to customize any functions for any reason, open and edit <i>custom.js</i> file in your theme's scripts directory /wp-content/themes/magazon/assets/js/</p>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+        
+
+
+
+
+        
+        <div id="psd" class="content_element">
+            <h4 class="option_title">PSD files</h4>
+            <p>I've included psd with this theme:</p>
+            <ul>
+                <li>Hotec Homepage PSD file</li>
+            </ul>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+        
+
+
+
+
+
+        
+        <div id="r_plugins" class="content_element">
+            <h4 class="option_title">Recommend Plugins</h4>
+            <p>WordPress offers tons of plugins which confuses the new user. Not just that but there are multiple plugins that serves the same purpose and have the same functions. Which one do you need to get the upper edge. I only mentioning the plugins that you need to start off your blog or make your website better with my theme .</p>
+            <ul>
+                <li><a href="http://akismet.com/">Akismet</a></li>
+                <li><a href="http://wordpress.org/extend/plugins/wordpress-seo/">WordPress SEO by Yoast</a></li>
+                <li><a href="http://wordpress.org/extend/plugins/contact-form-7/">Contact Form 7</a></li>
+                <li><a href="http://wordpress.org/extend/plugins/w3-total-cache/">W3 Total Cache</a></li>
+                <li><a href="http://wordpress.org/extend/plugins/google-sitemap-generator/">Google Sitemap Generator</a></li>
+            </ul>
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+        
+        <div id="credits" class="content_element">
+            <h4 class="option_title">Sources and Credits</h4>
+            <p>I would like to thank the following providers. This theme would not have been possible without the hard work and dedication of all of them.</p>
+            <ul>
+                <li><a href="http://jquery.com">Jquery</a> JavaScript Library</li>
+                <li><a href="http://jscolor.com/">JavaScript Color Picker</a></li>
+                <li><a href="http://www.dynamicdrive.com/dynamicindex1/ddsmoothmenu.htm">DDsmoothmenu</a></li>
+                <li>Icon font by <a href="http://fortawesome.github.com/Font-Awesome/">Font Awesome</a></li>
+                <li><a href="http://www.no-margin-for-errors.com/projects/prettyPhoto-jquery-lightbox-clone">PrettyPhoto</a> Lightbox Effect</li>
+                <li><a href="http://www.subtlepatterns.com/">Subtle Patterns</a></li>
+            </ul>
+            <p>Please note that none of the images in the demo are available in the theme package.</p>
+
+                
+            <div class="divider_top"><a style="float: right;" href="#main">Back to top</a></div>
+        </div><!-- / content_element -->
+        
+        
+        
+    </div>
+    <div class="clear"></div>
+</div> <!-- /container_12 -->
+
+</div>
+</body>
+</html>

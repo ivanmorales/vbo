@@ -1,0 +1,20 @@
+<div class="ait-themebox-options-header">Homepage Options</div>
+
+<div id="ait-themebox-display" class="ait-themebox-display">
+  <a href="javascript: display('.home .mainpage .page-content'); display('.home .mainpage .separator-line-new'); ">Content On/Off</a><br>
+  <a href="javascript: display('.home .mainpage .service-boxes');">Service-boxes On/Off</a><br>
+  <a href="javascript: display('.home .mainpage .separator-line'); display('.home .mainpage .tooltip-icons');">Tooltip-icons On/Off</a><br>
+  <a href="javascript: display('.home .mainpage .footer-widgets');">Footer Widgets On/Off</a><br>
+</div>
+
+<script type="text/javascript">
+function display(element)
+{
+  if($j(element).is(':visible')){
+    $j(element).hide();
+  }
+  else{
+    $j(element).show();
+  }
+}
+</script>
