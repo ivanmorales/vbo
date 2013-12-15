@@ -728,8 +728,7 @@ function st_post_thumbnail_gallery($post_id='', $size ='st_medium'){
                         $full_image_url = wp_get_attachment_image_src(get_post_thumbnail_id($post_id),'full');
                         $full_image_url =  $full_image_url[0];
                           
-                          $html  ='<img src="'.$thumb_image_url.'" alt="">
-                                    <div class="thumb-control-wrapper">
+                          $html  ='<img src="'.$thumb_image_url.'" alt=""><div class="thumb-control-wrapper">
                                         <ul class="thumb-control clearfix">
                                             <li><a title="View Detail" href="'.$link.'" class="go-detail">'.__('Open Detail' ,'smooththemes').'</a></li>
                                             <li><a rel="prettyPhoto" title="'.$title.'" href="'.$full_image_url.'" class="go-gallery">'.__('Open Gallery','smooththemes').'</a></li>

@@ -291,6 +291,12 @@ function stpb_ui($function_name,$name='',$values= array(),$supports= array(),$te
     
 }
 
+function stpb_trip_advisor($function_name, $name = '', $values = array()){
+    ?>
+    <?php
+    stpb_ui($function_name,$name,$values, array('title','content'));
+}
+
 
 function  stpb_accordion($function_name,$name='',$values= array()){
     ?>

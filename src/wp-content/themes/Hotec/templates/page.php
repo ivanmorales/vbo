@@ -16,7 +16,14 @@ if(empty($st_page_options['page_options']['show_content']) ||  $st_page_options[
 ?>
 <div class="content clearfix">
 <div <?php post_class('text-content'); ?>>
-    <?php 
+        <?php 
+          $thumb_html = st_post_thumbnail($post->ID,'st_medium',false, true);
+         if($page<2 && $thumb_html!=''): 
+         ?>
+        <div class="page-featured-image cpt-thumb-wrapper">
+        <?php echo $thumb_html;?>
+        </div>
+      <?php endif;  
     if($builder_content==''){
           the_content();
     }else{

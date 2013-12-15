@@ -531,6 +531,7 @@ function st_portfolio_func( $atts, $content='' ) {
         'num_col'=>4,
         'site_layout'=>'',
         'show_heading'=>'y',
+        'show_detail'=>'y',
         'filter_type'=>'default',
         'custom_filter_text'=>'',
         'custom_filter_url'=>'',
@@ -660,16 +661,16 @@ function st_portfolio_func( $atts, $content='' ) {
              $caption  = (!empty($caption)) ? join(esc_html(' / '),$caption) : '&nbsp;&nbsp;';
               
              $caption =   '<div class="cpt-desc">'.$caption.'</div>';
+
+             $detail = '<div class="cpt-detail">
+                                <h2 class="cpt-title"><a href="'.$link.'">'.get_the_title($post->ID).'</a></h2>
+                                '.$caption.'
+                            </div>';
              
             $html.= '<div class="cpt-item item-isotope '.$col_txt.' columns b30 '.esc_attr(join(' ',$filter_class)).'">
                             <div class="thumb-wrapper">
                                 '.st_post_thumbnail_gallery($post->ID).'
-                            </div>
-                             <div class="cpt-detail">
-                                <h2 class="cpt-title"><a href="'.$link.'">'.get_the_title($post->ID).'</a></h2>
-                                '.$caption.'
-                            </div>   
-                        </div>';
+                            </div>' . ($show_detail == 'y' ? $detail : '') . '</div>';
                     if($i>=$num_col){
                         $html.='<div class="clear"></div>';
                         $i=1;
@@ -1182,9 +1183,7 @@ function st_rooms_func( $atts, $content='' ) {
              
             $html.= '<div class="cpt-item item-isotope '.$col_txt.' columns b30 '.esc_attr(join(' ',$filter_class)).'">
                             <div class="thumb-wrapper">
-                                '.st_post_thumbnail_gallery($post->ID).'
-                            </div>
-                             <div class="cpt-detail">
+                                '.st_post_thumbnail_gallery($post->ID).'</div><div class="cpt-detail">
                                 <h2 class="cpt-title"><a href="'.$link.'">'.get_the_title($post->ID).'</a></h2>
                                 '.$caption.'
                             </div>   

@@ -443,7 +443,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 		.page-title-wrapper .page-title{margin-bottom:0px;text-transform: uppercase;letter-spacing: -0.5px;}
 		.page-title-alt .btn{padding:6px 13px;margin-top:-13px;}
 		
-		.titlebar-outer-wrapper{height:207px;overflow: hidden;position: relative;border-bottom:1px solid #ffffff;}
+		.titlebar-outer-wrapper{height:207px;overflow: hidden;position: relative;border-bottom:1px solid #ffffff;background-size:cover !important;background-position:center center !important;}
 		.titlebar-outer-wrapper.titlebar-map{height:500px;}
 		.titlebar-title{float:left;padding:25px;background:rgba(0, 0, 0, 0.6);}
 		.titlebar-title h1{margin:0px 0px 5px 0px;font-size:29px;color:#fff;text-transform: uppercase;font-weight: bold;letter-spacing: -0.7px;}

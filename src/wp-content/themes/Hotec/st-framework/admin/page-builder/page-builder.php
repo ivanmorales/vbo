@@ -67,6 +67,11 @@ add_action("admin_print_scripts-post.php","st_builder_js", 99);
 function get_page_builder_items(){
     global $post;
     $items = array(  // stpb_toggle
+        'stpb_trip_advisor'=>array(
+            'title'=>__('TripAdvisor Widget', 'smooththemes'),
+            'default_with'=>'1_2',
+            'generate_func' => 'stpb_trip_advisor_generate',
+            ),
         'stpb_accordion'=>array(
                 'title'=>__('Accordions','smooththemes'),
                  'default_with'=>'1_2',
