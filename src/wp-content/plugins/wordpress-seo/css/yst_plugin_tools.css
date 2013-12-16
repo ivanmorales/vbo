@@ -156,9 +156,17 @@ table.yoast_help tr:hover {
 	margin: 0 5px;
 	float: right;
 }
+.button.checkit {
+	padding: 5px 8px;
+	margin: 0 5px;
+	float: right;
+}
 
 .button {
 	color: #000 !important;
+}
+.button#submit {
+	color: #FFF !important;
 }
 
 .postbox#donate {
@@ -201,4 +209,14 @@ h2 code {
 
 #wpseo-conf {
 	max-width: 600px;
+}
+
+#pointer-primary {
+	margin: 0 5px 0 0; 
+}
+
+/* Add our icon to the Admin pages */
+#icon-wpseo_dashboard.icon32 {
+	background-image: url("../images/wordpress-SEO-32x32.png");
+	background-position: 0 0;
 }
