@@ -1,13 +1,16 @@
 <?php
 function ait_portfolio( $params ) {
-    extract( shortcode_atts( array (
-        'slug' => 'all',
-        'cat_id' => '',
-        'width' => '',
-        'height' => '',
-        'showdescription' => '',
-        'cols' => '1',
-    ), $params ) );
+	extract( shortcode_atts( array (
+		'slug' => 'all',
+		'cat_id' => '',
+		'width' => '',
+		'height' => '',
+		'showdescription' => '',
+		'cols' => '1',
+	), $params ) );
+
+	wp_enqueue_style("fancybox.css", "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
+	wp_enqueue_script("fancybox.js", "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js");
 
 	if($slug == 'all'){
 		$args = array( 'numberposts' => 500 , 'post_type' => 'portfolio', 'orderby' => 'menu_order', 'order' => 'ASC' );
@@ -19,9 +22,10 @@ function ait_portfolio( $params ) {
 
 	if ($cols > 5) $cols = 1;
 
-    $portfolio_images = get_posts($args);
-    $class = "ait-portfolio";
+	$portfolio_images = get_posts($args);
+	$class = "ait-portfolio";
 	$descrAdd = "";
+
 	if (!empty($showdescription)) {
 		if ($showdescription == "down") {
 			$class .= " desc-down";
@@ -33,74 +37,58 @@ function ait_portfolio( $params ) {
 	}
 	$class .= " pf-col".$cols;
 
-    $result = '<div class="'.$class.'">';
-    $count = count($portfolio_images);
+	$result = '<div class="fancy-gallery">';
+	$count = count($portfolio_images);
 	$i=0;
-    foreach ($portfolio_images as $key => $post_image) {
-      //$author = get_the_author_meta('nickname', $post_image->post_author );
-      //$post_link = get_permalink( $post_image->ID );
-      //$date = mysql2date(get_option('date_format'), $post_image->post_date);
-      //$category = get_the_category_list( ', ', $parents = '', $post_image->ID );
 
-      $result .= '<div class="pf-page"><div class="item clearfix">';
+	foreach ($portfolio_images as $key => $post_image) {
 
-	  // ITEM LINK
-	  $meta = get_post_meta($post_image->ID, '_ait-portfolio', TRUE);
-	  if($meta['itemType'] == "image"){
-		$item_link = $meta['imageLink'];
-		$item_type = 'image-type';
-	  } elseif($meta['itemType'] == "website"){
-		$item_link = $meta['websiteLink'];
-		$item_type = 'website-type';
-	  } elseif($meta['itemType'] == "video"){
-		$item_link = $meta['videoLink'];
-		$item_type = 'video-type';
-	  }
+		// ITEM LINK
+		$meta = get_post_meta($post_image->ID, '_ait-portfolio', TRUE);
+		if($meta['itemType'] == "image"){
+			$item_link = $meta['imageLink'];
+			$item_type = 'image-type';
+		} elseif($meta['itemType'] == "website"){
+			$item_link = $meta['websiteLink'];
+			$item_type = 'website-type';
+		} elseif($meta['itemType'] == "video"){
+			$item_link = $meta['videoLink'];
+			$item_type = 'video-type';
+		}
 
-      // ITEM THUMBNAIL
-      if (get_the_post_thumbnail( $post_image->ID )) {
-          $result .= '<div class="image" style="width: '.($width+5).'px;">';
-		  if($width != "" && $height != ""){
-		  	$result .= '<a class="zoom '.$item_type.' '.$slug.'" title="'.$meta['itemTitle'].'" href="'.$item_link.'" style="line-height:'.$height.'px; width:'.$width.'px; height:'.$height.'px;">';
+		// ITEM THUMBNAIL
+		if (get_the_post_thumbnail( $post_image->ID )) {
+		  	$result .= '<a rel="gallery1" class="zoom '.$item_type.' '.$slug.'" href="'.$item_link.'" title="'.$meta['itemTitle'].'">';
 
 		  	$thumbnail_id = get_post_thumbnail_id( $post_image->ID );
-          	$thumbnail_args = wp_get_attachment_image_src( $thumbnail_id, 'large' );
-		  	$result .= '<img width="'.$width.'" height="'.$height.'" src="'.TIMTHUMB_URL.'?src='.$thumbnail_args['0'].'&amp;w='.$width.'&amp;h='.$height.'&amp;a=tl" alt="" />';
-	  	  } else {
-	  	  	$result .= '<a class="zoom '.$item_type.' '.$slug.'" href="'.$item_link.'" style="line-height:150px;" width:150px; height:150px;">';
+			$thumbnail_args = wp_get_attachment_image_src( $thumbnail_id, 'large' );
+			$result .= '<img width="213" height="106" src="'.TIMTHUMB_URL.'?src='.$thumbnail_args['0'].'&amp;w=180&amp;h=106" alt="" />';
 
-	  	  	$thumbnail_id = get_post_thumbnail_id( $post_image->ID );
-          	$thumbnail_args = wp_get_attachment_image_src( $thumbnail_id, 'large' );
-		  	$result .= '<img width="150" height="150" src="'.TIMTHUMB_URL.'?src='.$thumbnail_args['0'].'&amp;w=150&amp;h=150" alt="" />';
-	  	  }
+			$result .= '</a>';
+		}
+    	}
 
-          $result .= '</a>';
-		  if (!empty($showdescription) && ($showdescription == "right" || $showdescription == "down")) {
-		    $result .= '<script class="image-description" type="text/template"></script>';
-		    $result .= '<h3 '.$descrAdd.'>'.$meta['itemTitle'].'</h3>';
-			$result .= '<div class="portfolio-item-description" '.$descrAdd.'>'.$meta['itemDescription'].'</div>';
-		  } else {
-		    $result .= '<script class="image-description" type="text/template">'.$meta['itemTitle'].'</script>';
-		  }
-          $result .= '</div>';
-
-      }
-
-      $result .= '</div></div>';
-	  $i++;
-	  if ($cols && ($i%$cols==0)) {
-		$result .= '<div class="pf-clear"></div>';
-	  }
-    }
-    $result .= '</div><!-- end of .ait-portfolio -->';
+    	$result .= '</div><!-- end of .ait-portfolio -->';
 	$result .= '
 		<script>
-		$(document).ready(function(){
-		<!-- // CATEGORIES //-->
-				$(\'.'.$slug.'\').colorbox({rel:\''.$slug.'\'});
-		});
-		</script>
-	  ';
-    return $result;
+		(function($, window) {
+			$(document).ready(function() {
+				$(".fancy-gallery a").fancybox({
+					prevEffect: "none",
+					nextEffect: "none",
+					helpers: {
+						title: {
+							type: "inside"
+						},
+						thumbs	: {
+							width	: 50,
+							height	: 50
+						}
+					}
+				});
+			});
+		})(jQuery, window);
+		</script>';
+	return $result;
 }
 add_shortcode( "ait-portfolio", "ait_portfolio" );

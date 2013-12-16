@@ -123,6 +123,7 @@ if(!function_exists('st_enqueue_scripts')){
             wp_enqueue_script( 'flexslider', st_js('jquery.flexslider.js'), array('jquery'),ST_VERSION, true);
             
              // jquery-ui.datepicker.js"
+            wp_enqueue_script( 'jquery.ui.core', st_js('jquery-ui.core.js'), array('jquery'),ST_VERSION, true);
             wp_enqueue_script( 'datepicker', st_js('jquery-ui.datepicker.js'), array('jquery'),ST_VERSION, true);
 
             wp_enqueue_script( 'ddsmoothmenu', st_js('ddsmoothmenu.js'), array('jquery'),ST_VERSION, true);

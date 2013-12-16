@@ -42,9 +42,6 @@ php_value post_max_size 12M
 RewriteEngine On
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
-
-RewriteRule ([^\?]+)\.(jpg|png|jpeg)\&(.+)$ wp-content/timthumb.php?src=$1.$2&$3&trm=thumb [L,NC]
-
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /index.php [L]

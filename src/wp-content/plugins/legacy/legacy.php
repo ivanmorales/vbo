@@ -11,3 +11,6 @@
 define('TIMTHUMB_URL', content_url('timthumb.php'));
 // AIT Portfolio
 require("lib/ait_portfolio.php");
+
+// Legacy shortcodes
+require("lib/shortcode.php");

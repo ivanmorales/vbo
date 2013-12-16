@@ -17,6 +17,7 @@ if(empty($st_page_options['page_options']['show_content']) ||  $st_page_options[
 <div class="content clearfix">
 <div <?php post_class('text-content'); ?>>
         <?php 
+    if($builder_content==''){
           $thumb_html = st_post_thumbnail($post->ID,'st_medium',false, true);
          if($page<2 && $thumb_html!=''): 
          ?>
@@ -24,7 +25,6 @@ if(empty($st_page_options['page_options']['show_content']) ||  $st_page_options[
         <?php echo $thumb_html;?>
         </div>
       <?php endif;  
-    if($builder_content==''){
           the_content();
     }else{
          echo do_shortcode($builder_content) ; 

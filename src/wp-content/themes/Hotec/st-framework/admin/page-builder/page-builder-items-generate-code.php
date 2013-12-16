@@ -430,13 +430,13 @@ function  stpb_ui_item_generate($data=array(),$tag ='li',$class='',$chil_class_p
 }
 
 function stpb_trip_advisor_generate($data){
-    return '
-    <div id="TA_selfserveprop858" class="TA_selfserveprop">
-        <ul id="7FFsncy378z" class="TA_links RRY63rlvH">
-            <li id="KXtYLX" class="1d2oZDZ">108 reviews of <a target="_blank" href="http://www.tripadvisor.com/Hotel_Review-g309243-d1219664-Reviews-Villa_Buena_Onda-Playas_del_Coco_Province_of_Guanacaste.html">Villa Buena Onda</a> in Playas del Coco</li>
-        </ul>
-    </div>
-    <script src="http://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=858&amp;locationId=1219664&amp;lang=en_US&amp;rating=true&amp;nreviews=4&amp;writereviewlink=false&amp;popIdx=false&amp;iswide=true&amp;border=false"></script>';
+    return '<div id="TA_selfserveprop501" class="TA_selfserveprop">
+<ul id="Fx05AUh" class="TA_links Yfs2Rjj">
+<li id="x9h6Ts" class="tOFs8MCEZk">108 reviews of <a target="_blank" href="http://www.tripadvisor.com/Hotel_Review-g309243-d1219664-Reviews-Villa_Buena_Onda-Playas_del_Coco_Province_of_Guanacaste.html">Villa Buena Onda</a> in Playas del Coco</li>
+</ul>
+</div>
+<script src="http://www.jscache.com/wejs?wtype=selfserveprop&amp;uniq=501&amp;locationId=1219664&amp;lang=en_US&amp;rating=true&amp;nreviews=5&amp;writereviewlink=true&amp;popIdx=true&amp;iswide=false&amp;border=false"></script>
+';
 }
 
 function  stpb_accordion_generate($data){

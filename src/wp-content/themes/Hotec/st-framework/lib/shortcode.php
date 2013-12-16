@@ -700,7 +700,8 @@ add_shortcode('portfolio', 'st_portfolio_func');
 // for entry content
 function st_this_entry_func($atts, $content='' ){
      global $post;
-      return apply_filters('the_content',$post->post_content);
+          $thumb_html = st_post_thumbnail($post->ID,'st_medium',false, true);
+      return $thumb_html . apply_filters('the_content',$post->post_content);
 }
 add_shortcode( 'this_entry', 'st_this_entry_func' );
 

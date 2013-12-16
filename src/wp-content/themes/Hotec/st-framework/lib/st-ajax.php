@@ -78,6 +78,9 @@ if(empty($errors)){
     die();
 }
 
+function st_clean($key, $default = '') {
+	return isset($_POST[$key]) ? esc_html($_POST[$key]) : $default;
+}
 
 function  st_contact_send(){
      // Site Info
@@ -94,16 +97,28 @@ function  st_contact_send(){
     }
     
 if(empty($errors)){
-    $contact_name = $from_name    = isset($_POST['contact_name']) ?  esc_html($_POST['contact_name'])  : '';
+    	$contact_name = $from_name    = isset($_POST['contact_first_name']) ?  esc_html($_POST['contact_first_name'])  : '';
+    	$contact_name .= isset($_POST['contact_last_name']) ? esc_html($_POST['contact_last_name']) : '';
+
 	$contact_phone   = isset($_POST['contact_phone']) ?  esc_html($_POST['contact_phone']) : '';
 	$contact_email   = $from_email = isset($_POST['contact_email']) ?  $_POST['contact_email'] : '';
-	$contact_subject = isset($_POST['contact_subject']) ? esc_html($_POST['contact_subject']) : '';
-	$contact_message = isset($_POST['contact_message']) ?  esc_html($_POST['contact_message']) : '';
+	$contact_message = isset($_POST['contact_message']) ?  esc_html($_POST['contact_message']) : 'No Message';
+
+	$type_of_room = st_clean('type_of_room');
+	$number_of_rooms = st_clean('number_of_rooms');
+	$number_of_people = st_clean('number_of_people');
+
+	$arrival = st_clean('arrival', 'Unspecified');
+	$departure = st_clean('departure', 'Unspecified');
 
 	$contact_name         =  sprintf(__('Name: %s','smooththemes'), $contact_name)."<br />";
 	$contact_email        =  sprintf(__('Email:  %s', 'smooththemes'),$contact_email)."<br />";
 	$contact_phone         = sprintf(__('Phone Number: %s','smooththemes') ,$contact_phone )." <br />";
-	$contact_subject       = sprintf(__('Subject: %s','smooththemes'),  $contact_subject )."<br />";
+	$type_of_room 	= sprintf(__('Type of Room: %s', 'smooththemes'), $type_of_room)." <br />";
+	$number_of_rooms 	= sprintf(__('# of Rooms: %s', 'smooththemes'), $number_of_rooms)." <br />";
+	$number_of_people 	= sprintf(__('# of People: %s', 'smooththemes'), $number_of_people)." <br />";
+	$arrival 	= sprintf(__('Arrival: %s', 'smooththemes'), $arrival)." <br />";
+	$departure 	= sprintf(__('Departure: %s', 'smooththemes'), $departure)." <br />";
 	$contact_message       = sprintf(__('Message: %s','smooththemes'),$contact_message )."<br />";
 
 	
@@ -116,7 +131,11 @@ if(empty($errors)){
 		$contact_name
 		$contact_email
 		$contact_phone
-		$contact_subject
+		$type_of_room
+		$number_of_rooms
+		$number_of_people
+		$arrival
+		$departure
 		$contact_message
 	";
 
