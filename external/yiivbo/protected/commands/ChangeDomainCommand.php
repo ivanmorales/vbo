@@ -1,9 +1,8 @@
 <?php
-define("DOMAIN", "www.villabuenaonda.com");
+define("DOMAIN", "www.villabuenaonda.local");
 define("DOMAIN_REGEX", "/(https?:\/\/)([^\.\-]+\.[^\.]+\.\w{2,5})/");
 
 class ChangeDomainCommand extends CConsoleCommand {
-
 
 	protected $defaultDomain = DOMAIN;
 	public $newDomain = DOMAIN;
@@ -13,7 +12,8 @@ class ChangeDomainCommand extends CConsoleCommand {
 
 	private $_options = array(
 		'siteurl',
-		'home'
+		'home',
+		'hotec',
 		);
 
 	public function init() {
@@ -27,14 +27,33 @@ class ChangeDomainCommand extends CConsoleCommand {
 		$options = $cmd->queryAll();
 
 		foreach($options as $option) {
-			$domain = preg_replace(DOMAIN_REGEX, '$1' . $this->newDomain, $option['option_value']);
+			if (!($data = @unserialize($option['option_value']))) {
+				$data = $option['option_value'];
+			}
+
+			$value = $data;
+
+			if (is_array($data)) {
+				$keys = array('site_logo', 'site_favicon');
+				foreach($keys as $key) {
+					if (!isset($data[$key]))
+						continue;
+					$data[$key] = preg_replace(DOMAIN_REGEX, '$1' . $this->newDomain, $data[$key]);
+				}
+
+				$value = serialize($data);
+			} else {
+				// var_dump($serialized, $data);
+				$value = preg_replace(DOMAIN_REGEX, '$1' . $this->newDomain, $option['option_value']);
+			}
+
 			$cmd
 				->setText("UPDATE wp_options SET option_value = :domain WHERE option_id = :id;")
 				->execute(array(
-					'domain' => $domain,
+					'domain' => $value,
 					'id' => $option['option_id']));
 
-			echo "Changed option: {$option['option_name']} to $domain \n";
+			echo "Changed option: {$option['option_name']} to $value \n";
 		}
 	}
 
@@ -119,6 +138,30 @@ class ChangeDomainCommand extends CConsoleCommand {
 
 	}
 
+	private function fixLayerslider() {
+		$replacement = '$1' . $this->newDomain;
+		$cmd = $this->db
+			->createCommand("SELECT id, data FROM wp_layerslider;");
+
+		$slides = $cmd->queryAll();
+
+		foreach ($slides as $slide) {
+			$data = json_decode($slide['data']);
+			if (is_array($data->layers)) {
+				foreach($data->layers as $layer) {
+					$layer->properties->background = preg_replace(DOMAIN_REGEX, $replacement, $layer->properties->background);
+				}
+			}
+
+			$cmd->setText("UPDATE wp_layerslider SET data = :domain WHERE id = :id;")
+				->execute(array(
+					'domain'=>json_encode($data),
+					'id'=>$slide['id']));
+		}
+
+		echo "Updated " . count($slides) . " slides.\n";
+	}
+
 	public function actionChange() {
 		$this->newDomain = $this->prompt("New Domain:", $this->defaultDomain);
 		echo "\n";
@@ -128,5 +171,7 @@ class ChangeDomainCommand extends CConsoleCommand {
 		$this->fixPosts();
 		echo "\n";
 		$this->fixPostMetas();
+		echo "\n";
+		$this->fixLayerslider();
 	}
 }

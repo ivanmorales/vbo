@@ -71,3 +71,74 @@ Stack trace:
 #4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
 #5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
 
+2013/12/22 11:03:00 [error] [php] Illegal string offset 'option_value' (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:44)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 11:11:15 [error] [php] Illegal string offset 'option_value' (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:44)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 11:16:00 [error] [php] Undefined variable: domain (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:58)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 11:34:37 [error] [php] unserialize(): Error at offset 0 of 31 bytes (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:32)
+Stack trace:
+#0 unknown(0): ChangeDomainCommand->actionChange()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#3 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#4 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#5 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#6 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 11:59:22 [error] [php] unserialize(): Error at offset 1181 of 4076 bytes (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:8)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#1 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#2 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#3 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 12:40:32 [error] [php] Undefined property: stdClass::$layers (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:154)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 12:48:24 [error] [php] Trying to get property of non-object (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:154)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 12:53:27 [error] [php] Undefined property: stdClass::$background (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:156)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+

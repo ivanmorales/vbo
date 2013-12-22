@@ -2,7 +2,6 @@
 if(is_singular()  && !is_singular('post')){
     global $post; 
 
-    var_dump("ivan");
     $st_page_builder = get_page_builder_options($post->ID);
     
      if(empty($st_page_builder)){
