@@ -1,0 +1,73 @@
+2013/12/21 23:25:25 [error] [php] Undefined variable: db (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:24)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#2 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#3 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#4 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/21 23:25:39 [error] [php] Undefined variable: db (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:24)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#2 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#3 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#4 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/21 23:32:46 [error] [php] Use of undefined constant DOMAIN - assumed 'DOMAIN' (/Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php:170)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#1 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#2 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/21 23:51:41 [error] [php] Undefined index: option_value (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:30)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/21 23:54:45 [error] [php] PDOStatement::execute() expects parameter 1 to be array, string given (/Users/ivan/Documents/git/yii/framework/db/CDbCommand.php:337)
+Stack trace:
+#0 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php(39): ChangeDomainCommand->fixOptions()
+#1 unknown(0): ChangeDomainCommand->actionChange()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#3 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#4 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#5 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#6 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#7 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 00:19:39 [error] [php] Undefined index: meta_id (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:56)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
+2013/12/22 00:20:11 [error] [exception.CException] exception 'CException' with message 'Property "ChangeDomainCommand.meta_keys" is not defined.' in /Users/ivan/Documents/git/yii/framework/base/CComponent.php:130
+Stack trace:
+#0 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php(48): CComponent->__get('meta_keys')
+#1 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php(69): ChangeDomainCommand->fixPostMetas()
+#2 [internal function]: ChangeDomainCommand->actionChange()
+#3 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs(Object(ChangeDomainCommand), Array)
+#4 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#5 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#6 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#7 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CApplication->run()
+#8 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once('/Users/ivan/Doc...')
+#9 {main}
+---
+2013/12/22 00:31:43 [error] [php] Undefined index: img (/Users/ivan/Documents/git/vbo/external/yiivbo/protected/commands/ChangeDomainCommand.php:69)
+Stack trace:
+#0 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommand.php(172): ReflectionMethod->invokeArgs()
+#1 /Users/ivan/Documents/git/yii/framework/console/CConsoleCommandRunner.php(71): ChangeDomainCommand->run()
+#2 /Users/ivan/Documents/git/yii/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run()
+#3 /Users/ivan/Documents/git/yii/framework/base/CApplication.php(180): CConsoleApplication->processRequest()
+#4 /Users/ivan/Documents/git/yii/framework/yiic.php(33): CConsoleApplication->run()
+#5 /Users/ivan/Documents/git/vbo/external/yiivbo/protected/yiic.php(7): require_once()
+
