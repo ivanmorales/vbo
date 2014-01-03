@@ -1653,7 +1653,7 @@ function stpb_rooms($function_name,$name='',$values= array()){
                 if($values['data']['num_col']==''){
                     $values['data']['num_col'] = 3;
                 }
-                foreach( array(2,3) as $i):
+                foreach( array(1,2,3) as $i):
                      
                      $selected="";
                      if($values['data']['num_col']==$i){

@@ -698,7 +698,6 @@ function st_post_thumbnail_gallery($post_id='', $size ='st_medium'){
                             $html ='<img src="'.$img_0.'" alt="">
                                 <div class="thumb-control-wrapper">
                                     <ul class="thumb-control clearfix">
-                                        <li><a title="'.__('View Detail','smooththemes').'" href="'.$link.'" class="go-detail">'.__('Open Detail','smooththemes').'</a></li>
                                         <li><a rel="prettyPhoto['.$gallery_id.']" title="'.$title.'" href="'.$list_img[0].'" class="go-gallery">'.__('Open Gallery','smooththemes') .'</a></li>
                                         ';
                                         
@@ -730,7 +729,6 @@ function st_post_thumbnail_gallery($post_id='', $size ='st_medium'){
                           
                           $html  ='<img src="'.$thumb_image_url.'" alt=""><div class="thumb-control-wrapper">
                                         <ul class="thumb-control clearfix">
-                                            <li><a title="View Detail" href="'.$link.'" class="go-detail">'.__('Open Detail' ,'smooththemes').'</a></li>
                                             <li><a rel="prettyPhoto" title="'.$title.'" href="'.$full_image_url.'" class="go-gallery">'.__('Open Gallery','smooththemes').'</a></li>
                                         </ul>
                                     </div>';

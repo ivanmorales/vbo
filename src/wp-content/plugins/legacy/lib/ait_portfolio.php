@@ -9,9 +9,6 @@ function ait_portfolio( $params ) {
 		'cols' => '1',
 	), $params ) );
 
-	wp_enqueue_style("fancybox.css", "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css");
-	wp_enqueue_script("fancybox.js", "//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.pack.js");
-
 	if($slug == 'all'){
 		$args = array( 'numberposts' => 500 , 'post_type' => 'portfolio', 'orderby' => 'menu_order', 'order' => 'ASC' );
 	} elseif($cat_id != '') {
@@ -69,26 +66,6 @@ function ait_portfolio( $params ) {
     	}
 
     	$result .= '</div><!-- end of .ait-portfolio -->';
-	$result .= '
-		<script>
-		(function($, window) {
-			$(document).ready(function() {
-				$(".fancy-gallery a").fancybox({
-					prevEffect: "none",
-					nextEffect: "none",
-					helpers: {
-						title: {
-							type: "inside"
-						},
-						thumbs	: {
-							width	: 50,
-							height	: 50
-						}
-					}
-				});
-			});
-		})(jQuery, window);
-		</script>';
 	return $result;
 }
 add_shortcode( "ait-portfolio", "ait_portfolio" );

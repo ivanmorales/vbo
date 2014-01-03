@@ -1,5 +1,51 @@
+body {
+	font-size: 14px;
+}
+
+h1 {
+	letter-spacing: .3px !important;
+}
+
 #ui-datepicker-div {
 width: 200px;
 background: #FFF;
 margin-top: -32px
+}
+
+.btn:hover {
+	background-color: #D9D2B0;
+}
+
+.thumb-control {
+	margin-left: -20px !important;
+}
+
+.top-bar-outer-wrapper { 
+  font-size: 12px;
+}
+
+.footer-columns.footer-sidebar {
+	display: none;
+}
+
+.fancy-gallery > a {
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 1%;
+}
+.fancy-gallery > a > img {
+    padding:  10px;
+    border: 1px solid whitesmoke;
+    border-radius: 4em 0 4em 0;
+    width: 85%;
+    transition: all 500ms;
+}
+
+.fancy-gallery > a > img:hover {
+    background: rgba(34,123,162,.2);
+    border-color: rgba(34,123,162,.5);
+}
+
+.fancy-gallery > a:nth-child(4n+0) {
+    margin-right: 0;
 }
