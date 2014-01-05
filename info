@@ -1,3 +1,5 @@
 vbo.imorales.com/wp-admin
 ivan
 .LUP^7vO^-oS
+
+/Applications/XAMPP/bin/./mysqldump -h127.0.0.1 -uroot -proot vbo_local > ~/Documents/git/vbo/db/db_vbo_20140105_1738.sql
