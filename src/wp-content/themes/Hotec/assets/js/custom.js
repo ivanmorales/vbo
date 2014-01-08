@@ -395,7 +395,7 @@ function ST_Date_Available(date){
 
 function ST_event_calendar(){
     
-    jQuery('.st-events-calendar .header a').live('click',function(){
+    jQuery('.st-events-calendar .header a').on('click',function(){
         var p = jQuery(this).parents('.st-events-calendar');
          var  q = jQuery(this).attr('data');
          

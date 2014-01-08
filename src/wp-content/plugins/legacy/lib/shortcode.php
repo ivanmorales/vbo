@@ -18,3 +18,10 @@ function legacy_frame($atts, $content, $tag) {
 
 	return '<div class="six columns  b10">' . $title . $content . '</div>';
 }
+
+add_shortcode("box-title", "nc_box_title");
+function nc_box_title($atts, $content, $tag) {
+	var_dump("blah");
+	exit;
+	return "<h3>$content</h3>";
+}

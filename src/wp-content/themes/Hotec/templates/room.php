@@ -6,13 +6,14 @@ $builder_content = get_page_builder_content($post->ID);
  
 ?>
 <div class="page-content">
+    <div class="row">
         <?php 
           $thumb_html = st_post_thumbnail($post->ID,'st_medium',false, true);
          if($page<2 && $thumb_html!=''): 
          ?>
-        <div class="page-featured-image cpt-thumb-wrapper">
+        <div class="eight columns"><div class="page-featured-image cpt-thumb-wrapper">
         <?php echo $thumb_html;?>
-        </div>
+        </div></div>
       <?php endif;  
       
        // service included
@@ -34,7 +35,7 @@ $builder_content = get_page_builder_content($post->ID);
        
         if($room_services){
        ?>
-        <div class="services-included">
+        <div class="four columns"><div class="services-included">
             <h3><?php _e('Services Included','smooththemes'); ?></h3>
             <ul>
                 <?php foreach($room_services as $s): 
@@ -55,10 +56,13 @@ $builder_content = get_page_builder_content($post->ID);
                 </li>
                 <?php endforeach; ?>
             </ul>
-        </div>                                
+        </div></div>                         
         <?php 
         }// end if has $room_services
-        
+      ?>
+        <div class="clear"></div>
+    </div>
+        <?php
         do_action('st_before_the_content',$post);
          echo '<div class="text-content">';
             the_content(); 
@@ -80,7 +84,6 @@ $builder_content = get_page_builder_content($post->ID);
         wp_link_pages( $args ); 
         
          ?> 
-        <div class="clear"></div>
  </div><!-- END page-content-->
     
     <div class="page-single-element">

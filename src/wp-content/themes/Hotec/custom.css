@@ -50,6 +50,12 @@ margin-top: -32px
     margin-right: 0;
 }
 
+@media (min-width: 768px) {
+    .services-included ul li {
+        width: 100%;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 959px) {
     .logo-wrapper { 
         max-height: 150px; 
@@ -61,6 +67,16 @@ margin-top: -32px
 @media (max-width: 767px) {
     .top-bar-left.left .menu-item a span {
         display: none;
+    }
+    .fancy-gallery > a {
+        width: 50%;
+    }
+    .fancy-gallery > a > img {
+        padding: 5px;
+        border: 1px solid whitesmoke;
+        border-radius: 1em 0 1em 0;
+        width: 90%;
+        transition: all 500ms;
     }
 }
 

@@ -10,6 +10,11 @@ function theme_video( $params, $content = null) {
         'height' => '',
         'border' => ''
     ), $params ) );
+
+    var_dump("blah");
+    exit;
+
+    	if($type == "") { $type = "youtube"; }
 	
 	if($link == "") { return ""; }
 	
