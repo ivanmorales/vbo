@@ -1,4 +1,7 @@
 <?php
+/** Enable W3 Total Cache */
+define('WP_CACHE', true); // Added by W3 Total Cache
+
 /**
  * The base configurations of the WordPress.
  *
@@ -16,16 +19,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'database_name_here');
-
+define('DB_NAME', 'ivanator_vbo');
+define('DISALLOW_FILE_EDIT', true); /* Disable File Editing */
 /** MySQL database username */
-define('DB_USER', 'username_here');
+define('DB_USER', 'ivanator_vbo');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'password_here');
+define('DB_PASSWORD', 'FZVZ+G;!OuD&');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -42,14 +45,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         'put your unique phrase here');
-define('SECURE_AUTH_KEY',  'put your unique phrase here');
-define('LOGGED_IN_KEY',    'put your unique phrase here');
-define('NONCE_KEY',        'put your unique phrase here');
-define('AUTH_SALT',        'put your unique phrase here');
-define('SECURE_AUTH_SALT', 'put your unique phrase here');
-define('LOGGED_IN_SALT',   'put your unique phrase here');
-define('NONCE_SALT',       'put your unique phrase here');
+define('AUTH_KEY',         'X$!7{3gp<gc_C4]3Mr-LJG*_F4_m|YhsO)HZHWE}VE}prPu:0(.QBgX0Q1BM0oLf');
+define('SECURE_AUTH_KEY',  '4jJ2`675sbcG7?{2/G73Lw8OJ3fkGsX2;%Q,yB+L!1iQ,2$!wiH+}qmLV0K.]#(G');
+define('LOGGED_IN_KEY',    'e+[?65AW9T*@Z{BUJ[V5&%+Df]Nx(TvZ `U6Z,o| n{ns=J8SWbCi1V+JIgY_J6(');
+define('NONCE_KEY',        'jubp~^Hn|-{L](xz0B3}jPD9W=M{*v`Y[aE)(oS,~h{ #LI-gbrfwj6BHxEw>EN|');
+define('AUTH_SALT',        'Go,(,MzP$gp,3A)!Z0,Bw O>}.77R~z%_b=xE ?5ydmluR|LsXPztWZAdY{9v5r<');
+define('SECURE_AUTH_SALT', 'Z=y[E_G!][D!Vrd~JhjEZW6_KL#-ZKu|=,2OyxE_i~TV>/J$A*K{%QMyuH@2U<`~');
+define('LOGGED_IN_SALT',   '<%_[fQ)ExP 1|#UQd*df[xuvs|gCI Y6=k)n%Do33DTz,<,H8}GaU_O)(no$An5;');
+define('NONCE_SALT',       'c`Q2$bjzZH? ]b5poqj&%xRG69<V4|U|WOokJm!qQbG7a<9K],uZWy)t8&]FtWyU');
 
 /**#@-*/
 
@@ -86,5 +89,7 @@ define('WP_DEBUG', false);
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
+/* W3TC settings*/
+	
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

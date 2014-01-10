@@ -50,6 +50,35 @@ margin-top: -32px
     margin-right: 0;
 }
 
+.form-row .btn.contact-button {
+    background-color: #D92525;
+}
+
+.amenities .four.columns {
+    margin-bottom: 0;
+}
+
+.rates {
+    margin-bottom: 2em;
+}
+.rates h1 {
+    margin-top: 2em;
+    margin-bottom: 0;
+}
+.rates table th {
+    text-align: left;
+}
+.rates table th:last-child {
+    text-align: center;
+}
+.rates table td, .rates table th {
+    padding: 9px 10px !important;
+    border-bottom: 1px solid #BBB
+}
+.rates table td:last-child {
+    text-align: right;
+}
+
 @media (min-width: 768px) {
     .services-included ul li {
         width: 100%;

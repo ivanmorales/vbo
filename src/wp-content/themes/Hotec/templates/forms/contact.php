@@ -97,7 +97,7 @@
                 <textarea id="contact_message" class="input_textarea" type="text" tabindex="20" value="" name ="contact_message" style="height:100px;"></textarea>
             </div>
             <div class="form-row field_submit">
-                <input type="submit" value="<?php _e('Submit Now','smooththemes'); ?>" id="contact_submit" class="btn" tabindex="21">
+                <input type="submit" value="<?php _e('Contact Us Today','smooththemes'); ?>" id="contact_submit" class="btn contact-button" tabindex="21">
                 <span class="loading hide"><img src="<?php echo st_img('loader.gif'); ?>"></span>
             </div>
             <div class="form-row notice_bar">
