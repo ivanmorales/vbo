@@ -1,9 +1,9 @@
 body {
-	font-size: 14px;
+    font-size: 14px;
 }
 
 h1 {
-	letter-spacing: .3px !important;
+    letter-spacing: .3px !important;
 }
 
 #ui-datepicker-div {
@@ -13,11 +13,11 @@ margin-top: -32px
 }
 
 .btn:hover {
-	background-color: #D9D2B0;
+    background-color: #D9D2B0;
 }
 
 .thumb-control {
-	margin-left: -20px !important;
+    margin-left: -20px !important;
 }
 
 .top-bar-outer-wrapper { 
@@ -25,7 +25,7 @@ margin-top: -32px
 }
 
 .footer-columns.footer-sidebar {
-	display: none;
+    display: none;
 }
 .fancy-gallery > a {
     margin-left:1.75%;
